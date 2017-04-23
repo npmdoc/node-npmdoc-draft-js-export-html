@@ -1,0 +1,233 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/sstur/draft-js-export-html#readme">draft-js-export-html (v0.5.2)</a>
+</h1>
+<h4>DraftJS: Export ContentState to HTML</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draft-js-export-html">module draft-js-export-html</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draft-js-export-html.</span>combineOrderedStyles</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draft-js-export-html.</span>normalizeAttributes</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draft-js-export-html.combineOrderedStyles">module draft-js-export-html.combineOrderedStyles</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draft-js-export-html.combineOrderedStyles.default">
+            function <span class="apidocSignatureSpan">draft-js-export-html.combineOrderedStyles.</span>default
+            <span class="apidocSignatureSpan">(customMap, defaults)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draft-js-export-html.normalizeAttributes">module draft-js-export-html.normalizeAttributes</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draft-js-export-html.normalizeAttributes.default">
+            function <span class="apidocSignatureSpan">draft-js-export-html.normalizeAttributes.</span>default
+            <span class="apidocSignatureSpan">(attributes)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draft-js-export-html" id="apidoc.module.draft-js-export-html">module draft-js-export-html</a></h1>
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draft-js-export-html.combineOrderedStyles" id="apidoc.module.draft-js-export-html.combineOrderedStyles">module draft-js-export-html.combineOrderedStyles</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draft-js-export-html.combineOrderedStyles.default" id="apidoc.element.draft-js-export-html.combineOrderedStyles.default">
+        function <span class="apidocSignatureSpan">draft-js-export-html.combineOrderedStyles.</span>default
+        <span class="apidocSignatureSpan">(customMap, defaults)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function combineOrderedStyles(customMap, defaults) {
+  if (customMap == null) {
+    return defaults;
+  }
+
+  var _defaults = _slicedToArray(defaults, 2);
+
+  var defaultStyleMap = _defaults[0];
+  var defaultStyleOrder = _defaults[1];
+
+  var styleMap = _extends({}, defaultStyleMap);
+  var styleOrder = [].concat(_toConsumableArray(defaultStyleOrder));
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = Object.keys(customMap)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next
+()).done); _iteratorNormalCompletion = true) {
+      var _styleName = _step.value;
+
+      if (defaultStyleMap.hasOwnProperty(_styleName)) {
+        var defaultStyles = defaultStyleMap[_styleName];
+        styleMap[_styleName] = _extends({}, defaultStyles, customMap[_styleName]);
+      } else {
+        styleMap[_styleName] = customMap[_styleName];
+        styleOrder.push(_styleName);
+      }
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion &amp;&amp; _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return [styleMap, styleOrder];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draft-js-export-html.normalizeAttributes" id="apidoc.module.draft-js-export-html.normalizeAttributes">module draft-js-export-html.normalizeAttributes</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draft-js-export-html.normalizeAttributes.default" id="apidoc.element.draft-js-export-html.normalizeAttributes.default">
+        function <span class="apidocSignatureSpan">draft-js-export-html.normalizeAttributes.</span>default
+        <span class="apidocSignatureSpan">(attributes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalizeAttributes(attributes) {
+  if (attributes == null) {
+    return attributes;
+  }
+  var normalized = {};
+  var didNormalize = false;
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = Object.keys(attributes)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next
+()).done); _iteratorNormalCompletion = true) {
+      var name = _step.value;
+
+      var newName = name;
+      if (ATTR_NAME_MAP.hasOwnProperty(name)) {
+        newName = ATTR_NAME_MAP[name];
+        didNormalize = true;
+      }
+      normalized[newName] = attributes[name];
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion &amp;&amp; _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return didNormalize ? normalized : attributes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
